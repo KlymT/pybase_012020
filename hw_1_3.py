@@ -19,7 +19,7 @@ k3 = f*c
 k4 = f*d
 k5 = f*e
 
-print('a + f = ', g1, 'str(a) + f = ', g2, ',',
+print('a + f = ', g1, 'str(a) + str(f) = ', g2, ',',
       'complex(a) + f = ', g3, ',', 'bool(a) + f = ', g4, ',', 'float(a) + f = ', g5, '.')
 
 print('a * f = ', k1, 'str(a) * f = ', k2, ',',
