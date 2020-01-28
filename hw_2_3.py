@@ -4,11 +4,11 @@ a = 1
 b = 1
 i = 1
 if n <= 0:
-    print ("Программа завершает работу")
+    print("Программа завершает работу")
 else:
     while i <= n:
-    c = a + b
-    a = b
-    b = c
-    print(c, end=",")
-    i +=1
+        c = a + b
+        a = b
+        b = c
+        print(c, end=", ")
+        i +=1
