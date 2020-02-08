@@ -1,4 +1,10 @@
-
+'''
+Пользователь вводит с клавиатуры строки, состоящие из слов.
+Пустая строка означает прекратить ввод текста.
+Программа формирует словарь со статистикой слов в котором слова являются ключами,
+а значения - количество повторений слова
+Вывести словарь статистики на экран в виде форматированной таблицы.
+'''
 
 #while True:
     #s = str(input('Введите текст\n'))
@@ -12,28 +18,43 @@
 
 
 from string import whitespace, punctuation
-#print('whitespace = {}'.format(repr(whitespace)))
-#print('punctuation = {}'.format(repr(punctuation)))
 
-s = str(input('Введите текст\n'))
+a = str(input('Введите текст\n'))
+b = str(' ')
+c = str()
+
+def fib():
+    global a
+    global b
+    global c
+    while not b == str(''):
+        c = a + b
+        a = c
+        b = str(input('Введите текст\n'))
+
+fib()
+
+s = c
 s = s.lower()
-n = s.split()
-b = 0
+
+
+
+n = s.split(' ') #list(filter( lambda x: x not in punctuation + whitespace, s)) #[c for c in s if c not in punctuation] #
+f = 0
 
 def countmax():
-    global b
+    global f
     for i in n:
         a = len(i)
-        if a > b:
-            b = a
+        if a > f:
+            f = a
 
 countmax()
 d = dict()
 for i in n:
-    d[i] = n.count(i)
-    #v = b - int(len(i))
-    #print('|', i, ' '*v, '|', n.count(i), '|')
+     d[i] = n.count(i)
+
 for name, num in d.items():
-    v = b - int(len(name))
+    v = f - int(len(name))
     print('|{}'.format(name), ' '*v, '|{}|'.format(num))
 
