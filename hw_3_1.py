@@ -30,7 +30,8 @@ s = s.replace('.', ' ', -1)
 s = s.replace(':', ' ', -1)
 s = s.replace('\n', ' ', -1)
 s = s.replace('  ', ' ', -1)
-n = s.split(' ')
+n = list(s.split(' '))
+
 
 f = 0
 
