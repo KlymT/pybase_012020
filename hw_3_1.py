@@ -6,21 +6,9 @@
 Вывести словарь статистики на экран в виде форматированной таблицы.
 '''
 
-#while True:
-    #s = str(input('Введите текст\n'))
-    #n = s.split(' ')
-
-    #if not n.isalpha():
-        #print('Вводить можно только текст')
-        #continue
-    #else:
-        #break
-
-
-from string import whitespace, punctuation
 
 a = str(input('Введите текст\n'))
-b = str(' ')
+b = str(',')
 c = str()
 
 def fib():
@@ -34,12 +22,12 @@ def fib():
 
 fib()
 
-s = c
-s = s.lower()
-
-
-
-n = s.split(' ') #list(filter( lambda x: x not in punctuation + whitespace, s)) #[c for c in s if c not in punctuation] #
+s = c.lower()
+s = s.replace(',', ' ', -1)
+s = s.replace('.', ' ', -1)
+s = s.replace('  ', ' ', -1)
+print(s)
+n = s.split(' ')
 f = 0
 
 def countmax():
