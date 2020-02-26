@@ -55,23 +55,39 @@ contact1.patronymic = 'Alexandrovich'
 contact1.mail_address = 'Kyiv, Lva Tolstogo 57/2010'
 contact1.e_mail = 'klimt@ukr.net'
 contact1.phone_num = '12345678'
-contact1.messenger = {1: 'vk', 2: 'telegram', 3: 'messenger'}
+contact1.messenger = {1: 'vk', 2: 'telegram', 3: 'messenger'}   
 
 contact2 = Contact('vova', 'petrov', 'lva Tolstogo 25',)
-# contact3 = Contact('ova', 'petrov', 'lva Tolstogo 25', 'kt@ukr.net', '9876543', 'telegram')
-# contact4 = Contact('va', 'petrov', 'lva Tolstogo 25', 'kt@ukr.net', '9876543', 'telegram')
-# contact5 = Contact('a', 'petrov', 'lva Tolstogo 25', 'kt@ukr.net', '9876543', 'telegram')
+contact3 = Contact('ova', 'petrov', 'Alex')
+contact4 = Contact('va', 'petrov', 'Felix')
+contact5 = Contact('a', 'petrov', 'Ingeneer')
 
-print(contact1, contact2)
-# , contact3, contact4, contact5)
-
-
-# class ContactsBook:
-#
-#     def __init__(self):
-#         self.contacts = []
-#
-#
-#     def __str__(self):
+print(contact1, contact2, contact3, contact4, contact5)
+print('=' * 60)
 
 
+class ContactsBook:
+
+    def __init__(self, name):
+        self.name = name
+        self.contacts = []
+
+    def __str__(self):
+        result = []
+        for contact in self.contacts:
+            result.append(str(contact))
+        report_of_contacts = '\n'.join(result)
+        return '\n' + '=' * 60 + f"\n" \
+                                 f"Contacts:\n{report_of_contacts}\n" + '=' * 60 + '\n'
+
+    def append(self, contact):
+        self.contacts.append(contact)
+
+
+contacts = ContactsBook('Адресная книга')
+contacts.append(contact1)
+contacts.append(contact2)
+contacts.append(contact3)
+contacts.append(contact4)
+contacts.append(contact5)
+print(contacts)
